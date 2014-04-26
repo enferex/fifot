@@ -20,6 +20,8 @@ checking for updates to the fifo.
 
 Currently this tool assumes ascii data delimited by newline characters.
 
+This has only been tested on fairly slow data rates passing though the fifo.
+
 
 Build
 -----
