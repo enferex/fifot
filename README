@@ -1,0 +1,42 @@
+fifot: Collect stats and report the contents of a FIFO
+======================================================
+
+What
+----
+fifot listens on a fifo and collects line count and byte count information about
+the data passing through the fifo.  For more information regarding FIFOs, check
+the man page for `mkfifo'
+
+fifot opens the fifo specified by the user and reads data passing through that
+fifo.  This tool can display that information to stdout acting similar to the
+`tee' command. Terminating fifot with ctrl-c (SIGINT) will display the
+statistics collected.
+
+
+Notes
+-----
+This tool will utilize the CPU intensively since it must perform a tight-loop
+checking for updates to the fifo.
+
+Currently this tool assumes ascii data delimited by newline characters.
+
+
+Build
+-----
+Run `make' in the fifot directory.
+
+
+Use
+---
+To report data passing through the fifo:
+    `./fifot -f /path/to/myfifo -d'
+
+Other options are available by checking the help message:
+    `./fifot -h'
+
+
+Contact
+-------
+If you want more features... contact me :-)
+Matt Davis (enferex)
+mattdavis9@gmail.com
